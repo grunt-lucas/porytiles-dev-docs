@@ -1,3 +1,45 @@
 # Porytiles Developer Documentation
 
-Coming soon.
+Developer documentation for Porytiles, including architecture, contributing guidelines, and API reference.
+
+📖 **Read the docs**: https://grunt-lucas.github.io/porytiles-dev-docs/
+
+## Building Locally
+
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
+
+```bash
+# Build HTML documentation
+cd docsrc
+uv run make html
+
+# View locally
+open _build/html/index.html
+```
+
+## Deploying to GitHub Pages
+
+```bash
+cd docsrc
+uv run make github
+```
+
+This builds the HTML and copies it to the `docs/` directory. Commit and push to deploy.
+
+## Adding Content
+
+- Add `.rst` or `.md` files to `docsrc/`
+- Update `index.rst` to include new pages in the toctree
+- Rebuild with `uv run make html`
+
+## Structure
+
+```
+├── docsrc/           # Sphinx source files
+│   ├── conf.py       # Sphinx configuration
+│   ├── Makefile      # Build commands
+│   ├── index.rst     # Landing page
+│   └── _static/      # Static assets (CSS, images)
+├── docs/             # Built HTML for GitHub Pages
+└── pyproject.toml    # Python dependencies
+```
