@@ -1,0 +1,1175 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Formatting Testbed &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=51b770b3"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="API Reference" href="reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Porytiles Developer Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Markdown Formatting Testbed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inline-formatting">Inline Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#headings">Headings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#third-level-heading">Third-Level Heading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fourth-level-heading">Fourth-Level Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#paragraphs-and-line-breaks">Paragraphs and Line Breaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links">Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#external-links">External Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-cross-references">Internal Cross-References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-style-links">Reference-Style Links</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lists">Lists</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unordered-lists">Unordered Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordered-lists">Ordered Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nested-lists">Nested Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-lists">Task Lists</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#blockquotes">Blockquotes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nested-blockquotes">Nested Blockquotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blockquote-with-attribution">Blockquote with Attribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#code-blocks">Code Blocks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inline-code">Inline Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fenced-code-blocks">Fenced Code Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block-without-language-no-highlighting">Code Block Without Language (No Highlighting)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block-with-line-numbers">Code Block with Line Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block-with-line-emphasis">Code Block with Line Emphasis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-block-with-caption">Code Block with Caption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#colon-fence-code-blocks">Colon Fence Code Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-pipe-table">Simple Pipe Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wide-table">Wide Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-with-inline-formatting">Table with Inline Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-table-directive">List Table Directive</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-lists">Definition Lists</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multi-paragraph-definition">Multi-paragraph Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#field-lists">Field Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admonitions">Admonitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-admonitions">Standard Admonitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admonition-with-custom-title">Admonition with Custom Title</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collapsed-dropdown-admonition">Collapsed/Dropdown Admonition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#colon-fence-admonitions">Colon Fence Admonitions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#images-and-figures">Images and Figures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#markdown-image-syntax">Markdown Image Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-figure-directive">Sphinx Figure Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-with-specific-width">Image with Specific Width</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mathematics">Mathematics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inline-math">Inline Math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-math-dollar-signs">Display Math (Dollar Signs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-math-directive">Display Math (Directive)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ams-math-environment">AMS Math Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#horizontal-rules">Horizontal Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#substitutions">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smart-quotes-and-replacements">Smart Quotes and Replacements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-level-attributes">Block-Level Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inline-attributes">Inline Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roles-and-cross-references">Roles and Cross-References</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-roles">Built-in Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rubric-directive">Rubric Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topic-directive">Topic Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#epigraph">Epigraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-quote">Pull Quote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compound-paragraph">Compound Paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-directive">Container Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sidebar">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parsed-literal-block">Parsed Literal Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centered-text">Centered Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versioning-directives">Versioning Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html-in-markdown">HTML in Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#escaped-characters">Escaped Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#long-content-for-scroll-testing">Long Content for Scroll Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Porytiles Developer Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Markdown Formatting Testbed</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/testbed.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-formatting-testbed">
+<h1>Markdown Formatting Testbed<a class="headerlink" href="#markdown-formatting-testbed" title="Link to this heading"></a></h1>
+<p>This page showcases every Markdown and MyST formatting feature available in this documentation theme. Use it as a visual reference for how different elements render with the Sphinx RTD theme.</p>
+<hr class="docutils" />
+<section id="inline-formatting">
+<h2>Inline Formatting<a class="headerlink" href="#inline-formatting" title="Link to this heading"></a></h2>
+<p><strong>Bold text</strong> using double asterisks.</p>
+<p><em>Italic text</em> using single asterisks.</p>
+<p><em><strong>Bold and italic</strong></em> using triple asterisks.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Inline</span> <span class="pre">code</span></code> using backticks.</p>
+<p><s>Strikethrough text</s> using double tildes. <em>(Requires <code class="docutils literal notranslate"><span class="pre">strikethrough</span></code> extension.)</em></p>
+<p>Here is a <sub>subscript</sub> using the sub role and a <sup>superscript</sup> using the sup role.</p>
+<p><abbr title="HyperText Markup Language">HTML</abbr> using the abbr role for abbreviations.</p>
+<p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">Shift</kbd>+<kbd class="kbd docutils literal notranslate">P</kbd> renders as a keyboard shortcut.</p>
+</section>
+<hr class="docutils" />
+<section id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Link to this heading"></a></h2>
+<p>The heading hierarchy is demonstrated by the structure of this page itself. Here are the levels:</p>
+<section id="third-level-heading">
+<h3>Third-Level Heading<a class="headerlink" href="#third-level-heading" title="Link to this heading"></a></h3>
+<section id="fourth-level-heading">
+<h4>Fourth-Level Heading<a class="headerlink" href="#fourth-level-heading" title="Link to this heading"></a></h4>
+<section id="fifth-level-heading">
+<h5>Fifth-Level Heading<a class="headerlink" href="#fifth-level-heading" title="Link to this heading"></a></h5>
+<section id="sixth-level-heading">
+<h6>Sixth-Level Heading<a class="headerlink" href="#sixth-level-heading" title="Link to this heading"></a></h6>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="paragraphs-and-line-breaks">
+<h2>Paragraphs and Line Breaks<a class="headerlink" href="#paragraphs-and-line-breaks" title="Link to this heading"></a></h2>
+<p>This is the first paragraph. It contains multiple sentences to demonstrate how paragraph text flows in the RTD theme. Notice how the text wraps and the line spacing behaves.</p>
+<p>This is a second paragraph, separated from the first by a blank line.</p>
+<p>This line has a hard line break after it.<br />
+This is the next line, forced onto a new line within the same paragraph using a backslash.</p>
+</section>
+<hr class="docutils" />
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading"></a></h2>
+<section id="external-links">
+<h3>External Links<a class="headerlink" href="#external-links" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Inline link: <a class="reference external" href="https://github.com/grunt-lucas/porytiles">Porytiles GitHub</a></p></li>
+<li><p>Bare URL (auto-linked): <a class="reference external" href="https://github.com/grunt-lucas/porytiles">https://github.com/grunt-lucas/porytiles</a></p></li>
+<li><p>Link with title: <a class="reference external" href="https://github.com/grunt-lucas/porytiles" title="Visit the Porytiles repository">Porytiles GitHub</a></p></li>
+</ul>
+</section>
+<section id="internal-cross-references">
+<h3>Internal Cross-References<a class="headerlink" href="#internal-cross-references" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Link to another page: <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started</span></a></p></li>
+<li><p>Link to another page with custom text: <a class="reference internal" href="architecture.html"><span class="doc">Go to Architecture</span></a></p></li>
+<li><p>Reference-style link to a section on this page: <a class="reference internal" href="#admonitions-section"><span class="std std-ref">Admonitions</span></a></p></li>
+</ul>
+</section>
+<section id="reference-style-links">
+<h3>Reference-Style Links<a class="headerlink" href="#reference-style-links" title="Link to this heading"></a></h3>
+<p>This uses <a class="reference external" href="https://github.com/grunt-lucas/porytiles">reference-style links</a> which define the URL elsewhere.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading"></a></h2>
+<section id="unordered-lists">
+<h3>Unordered Lists<a class="headerlink" href="#unordered-lists" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Item one</p></li>
+<li><p>Item two</p></li>
+<li><p>Item three</p></li>
+</ul>
+<p>Alternative markers:</p>
+<ul class="simple">
+<li><p>Star item one</p></li>
+<li><p>Star item two</p></li>
+<li><p>Star item three</p></li>
+</ul>
+</section>
+<section id="ordered-lists">
+<h3>Ordered Lists<a class="headerlink" href="#ordered-lists" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>First item</p></li>
+<li><p>Second item</p></li>
+<li><p>Third item</p></li>
+</ol>
+<p>Starting from a different number:</p>
+<ol class="arabic simple" start="5">
+<li><p>Fifth item</p></li>
+<li><p>Sixth item</p></li>
+<li><p>Seventh item</p></li>
+</ol>
+</section>
+<section id="nested-lists">
+<h3>Nested Lists<a class="headerlink" href="#nested-lists" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Outer item A</p>
+<ul>
+<li><p>Inner item A.1</p></li>
+<li><p>Inner item A.2</p>
+<ul>
+<li><p>Deep item A.2.a</p></li>
+<li><p>Deep item A.2.b</p></li>
+</ul>
+</li>
+<li><p>Inner item A.3</p></li>
+</ul>
+</li>
+<li><p>Outer item B</p>
+<ol class="arabic simple">
+<li><p>Numbered inner B.1</p></li>
+<li><p>Numbered inner B.2</p></li>
+</ol>
+</li>
+<li><p>Outer item C</p></li>
+</ul>
+</section>
+<section id="task-lists">
+<h3>Task Lists<a class="headerlink" href="#task-lists" title="Link to this heading"></a></h3>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">tasklist</span></code> extension.)</em></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Completed task</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Another completed task</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Incomplete task</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Another incomplete task</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Completed subtask</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Incomplete subtask</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="blockquotes">
+<h2>Blockquotes<a class="headerlink" href="#blockquotes" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>This is a simple blockquote. It can contain multiple sentences and will be styled with a left border in the RTD theme.</p>
+</div></blockquote>
+<blockquote>
+<div><p>This is a blockquote with <strong>bold</strong>, <em>italic</em>, and <code class="docutils literal notranslate"><span class="pre">code</span></code> inside.</p>
+</div></blockquote>
+<section id="nested-blockquotes">
+<h3>Nested Blockquotes<a class="headerlink" href="#nested-blockquotes" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p>Outer blockquote.</p>
+<blockquote>
+<div><p>Inner nested blockquote.</p>
+<blockquote>
+<div><p>Even deeper nesting.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="blockquote-with-attribution">
+<h3>Blockquote with Attribution<a class="headerlink" href="#blockquote-with-attribution" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p>The best error message is the one that never shows up.</p>
+<p>— Thomas Fuchs</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="code-blocks">
+<h2>Code Blocks<a class="headerlink" href="#code-blocks" title="Link to this heading"></a></h2>
+<section id="inline-code">
+<h3>Inline Code<a class="headerlink" href="#inline-code" title="Link to this heading"></a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">std::vector&lt;int&gt;</span></code> for dynamic arrays. The function <code class="docutils literal notranslate"><span class="pre">compute_something()</span></code> returns an integer.</p>
+</section>
+<section id="fenced-code-blocks">
+<h3>Fenced Code Blocks<a class="headerlink" href="#fenced-code-blocks" title="Link to this heading"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">porytiles2</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TileCompiler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">TileCompiler</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+
+<span class="w">    </span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">compile_tiles</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tile</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tiles</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tile</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">tiles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tile</span><span class="p">.</span><span class="n">pixel_count</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace porytiles2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python example</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_config</span><span class="p">(</span><span class="n">schema_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate configuration from a YAML schema.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">schema_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">schema</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">process_schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shell commands</span>
+cmake<span class="w"> </span>--build<span class="w"> </span>clion-build-debug<span class="w"> </span>-j7
+cmake<span class="w"> </span>--install<span class="w"> </span>clion-build-debug<span class="w"> </span>--prefix<span class="w"> </span>~/.local
+./clion-build-debug/Porytiles2/tests/Porytiles2AllTests
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;porytiles&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;max_palettes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tile_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># YAML configuration</span>
+<span class="nt">project</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">porytiles</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0.0</span>
+<span class="w">  </span><span class="nt">settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">max_palettes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16</span>
+<span class="w">    </span><span class="nt">tile_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+</pre></div>
+</div>
+</section>
+<section id="code-block-without-language-no-highlighting">
+<h3>Code Block Without Language (No Highlighting)<a class="headerlink" href="#code-block-without-language-no-highlighting" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">plain</span> <span class="n">code</span> <span class="n">block</span><span class="o">.</span>
+<span class="n">No</span> <span class="n">syntax</span> <span class="n">highlighting</span> <span class="ow">is</span> <span class="n">applied</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">preserves</span>    <span class="n">whitespace</span>    <span class="ow">and</span>
+    <span class="n">indentation</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="code-block-with-line-numbers">
+<h3>Code Block with Line Numbers<a class="headerlink" href="#code-block-with-line-numbers" title="Link to this heading"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">namespace</span><span class="w"> </span><span class="nn">porytiles2</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, Porytiles!&quot;</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace porytiles2</span>
+</pre></div>
+</div>
+</section>
+<section id="code-block-with-line-emphasis">
+<h3>Code Block with Line Emphasis<a class="headerlink" href="#code-block-with-line-emphasis" title="Link to this heading"></a></h3>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos">2</span>
+<span class="hll"><span class="linenos">3</span><span class="c1">// This line is emphasized</span>
+</span><span class="linenos">4</span><span class="kt">int</span><span class="w"> </span><span class="nf">process_tiles</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="linenos">5</span><span class="w">    </span><span class="c1">// These lines</span>
+</span><span class="hll"><span class="linenos">6</span><span class="w">    </span><span class="c1">// are also</span>
+</span><span class="hll"><span class="linenos">7</span><span class="w">    </span><span class="c1">// emphasized</span>
+</span><span class="linenos">8</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="code-block-with-caption">
+<h3>Code Block with Caption<a class="headerlink" href="#code-block-with-caption" title="Link to this heading"></a></h3>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Example: A simple tile processor</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">struct</span><span class="w"> </span><span class="nc">Tile</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+<span class="linenos">3</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">palette_id</span><span class="p">;</span>
+<span class="linenos">4</span><span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="colon-fence-code-blocks">
+<h3>Colon Fence Code Blocks<a class="headerlink" href="#colon-fence-code-blocks" title="Link to this heading"></a></h3>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">colon_fence</span></code> extension.)</em></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1">// This code block uses colon fence syntax</span>
+<span class="linenos">2</span><span class="kt">void</span><span class="w"> </span><span class="nf">example</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">    </span><span class="c1">// Useful when nesting directives</span>
+<span class="linenos">4</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Link to this heading"></a></h2>
+<section id="simple-pipe-table">
+<h3>Simple Pipe Table<a class="headerlink" href="#simple-pipe-table" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Feature</p></th>
+<th class="head text-center"><p>Status</p></th>
+<th class="head text-right"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Compilation</p></td>
+<td class="text-center"><p>Complete</p></td>
+<td class="text-right"><p>All targets supported</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Decompilation</p></td>
+<td class="text-center"><p>In Progress</p></td>
+<td class="text-right"><p>Partial implementation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Animation</p></td>
+<td class="text-center"><p>Complete</p></td>
+<td class="text-right"><p>Full keyframe support</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Dual Layer</p></td>
+<td class="text-center"><p>Planned</p></td>
+<td class="text-right"><p>Not yet started</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Column alignment is demonstrated above — left, center, and right.</em></p>
+</section>
+<section id="wide-table">
+<h3>Wide Table<a class="headerlink" href="#wide-table" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column 1</p></th>
+<th class="head"><p>Column 2</p></th>
+<th class="head"><p>Column 3</p></th>
+<th class="head"><p>Column 4</p></th>
+<th class="head"><p>Column 5</p></th>
+<th class="head"><p>Column 6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data A1</p></td>
+<td><p>Data A2</p></td>
+<td><p>Data A3</p></td>
+<td><p>Data A4</p></td>
+<td><p>Data A5</p></td>
+<td><p>Data A6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data B1</p></td>
+<td><p>Data B2</p></td>
+<td><p>Data B3</p></td>
+<td><p>Data B4</p></td>
+<td><p>Data B5</p></td>
+<td><p>Data B6</p></td>
+</tr>
+<tr class="row-even"><td><p>Data C1</p></td>
+<td><p>Data C2</p></td>
+<td><p>Data C3</p></td>
+<td><p>Data C4</p></td>
+<td><p>Data C5</p></td>
+<td><p>Data C6</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="table-with-inline-formatting">
+<h3>Table with Inline Formatting<a class="headerlink" href="#table-with-inline-formatting" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Syntax</p></th>
+<th class="head"><p>Rendered</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bold</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**bold**</span></code></p></td>
+<td><p><strong>bold</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Italic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*italic*</span></code></p></td>
+<td><p><em>italic</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">`code`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[text](url)</span></code></p></td>
+<td><p><a class="reference external" href="https://example.com">text</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Strikethrough</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">~~strike~~</span></code></p></td>
+<td><p><s>strike</s></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="list-table-directive">
+<h3>List Table Directive<a class="headerlink" href="#list-table-directive" title="Link to this heading"></a></h3>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Comparison of Approaches</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Approach</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Direct compilation</p></td>
+<td><p>Fast, simple pipeline</p></td>
+<td><p>Less flexible</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multi-pass</p></td>
+<td><p>Better optimization opportunities</p></td>
+<td><p>More complex, slower</p></td>
+</tr>
+<tr class="row-even"><td><p>Hybrid</p></td>
+<td><p>Balance of speed and flexibility</p></td>
+<td><p>Implementation complexity</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="docutils" />
+<section id="definition-lists">
+<h2>Definition Lists<a class="headerlink" href="#definition-lists" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">deflist</span></code> extension.)</em></p>
+<dl class="simple myst">
+<dt>Metatile</dt><dd><p>A 2x2 arrangement of 8x8 pixel tiles that forms a 16x16 pixel unit in the game’s tileset system.</p>
+</dd>
+<dt>Palette</dt><dd><p>A set of 16 colors (including one transparent color) used to color tiles. GBA games support up to 16 palettes.</p>
+</dd>
+<dt>Tileset</dt><dd><p>A collection of tiles, palettes, and metatile definitions that define the visual appearance of a map area.</p>
+</dd>
+<dt>Primary Tileset</dt><dd><p>The base tileset shared across many maps (e.g., general terrain).</p>
+</dd>
+<dt>Secondary Tileset</dt><dd><p>A tileset layered on top of the primary, providing map-specific tiles.</p>
+</dd>
+</dl>
+<section id="multi-paragraph-definition">
+<h3>Multi-paragraph Definition<a class="headerlink" href="#multi-paragraph-definition" title="Link to this heading"></a></h3>
+<dl class="simple myst">
+<dt>Domain-Driven Design (DDD)</dt><dd><p>An approach to software development that centers the project on the core business domain.</p>
+<p>In Porytiles, the domain layer contains pure business logic with no I/O dependencies. This includes tile compilation, palette optimization, and metatile assembly.</p>
+<p>The infrastructure layer handles file I/O, CLI parsing, and external library integration.</p>
+</dd>
+</dl>
+</section>
+</section>
+<hr class="docutils" />
+<section id="field-lists">
+<h2>Field Lists<a class="headerlink" href="#field-lists" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">fieldlist</span></code> extension.)</em></p>
+<dl class="myst field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>grunt-lucas</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>2.0.0</p>
+</dd>
+<dt class="field-odd">License<span class="colon">:</span></dt>
+<dd class="field-odd"><p>GPLv3</p>
+</dd>
+<dt class="field-even">Platform<span class="colon">:</span></dt>
+<dd class="field-even"><p>Linux, macOS, Windows</p>
+</dd>
+<dt class="field-odd">Language<span class="colon">:</span></dt>
+<dd class="field-odd"><p>C++23</p>
+</dd>
+</dl>
+<hr class="docutils" />
+</section>
+<section id="admonitions">
+<span id="admonitions-section"></span><h2>Admonitions<a class="headerlink" href="#admonitions" title="Link to this heading"></a></h2>
+<section id="standard-admonitions">
+<h3>Standard Admonitions<a class="headerlink" href="#standard-admonitions" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a <strong>note</strong> admonition. Use it for supplementary information that adds context.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a <strong>tip</strong> admonition. Use it for helpful suggestions and best practices.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is an <strong>important</strong> admonition. Use it to highlight critical information the reader should not miss.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a <strong>warning</strong> admonition. Use it to caution about potential pitfalls or dangerous operations.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is a <strong>danger</strong> admonition. Use it for actions that could cause severe problems like data loss.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This is a <strong>caution</strong> admonition. Similar to warning but less severe.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This is an <strong>attention</strong> admonition. Draws the reader’s eye to something noteworthy.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This is a <strong>hint</strong> admonition. Like a tip, but softer — suggesting a possible approach.</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>This is an <strong>error</strong> admonition. Use it to describe error conditions or failure modes.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This is a <strong>see also</strong> admonition. Use it to point readers to related topics.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="architecture.html"><span class="doc">Architecture</span></a></p></li>
+<li><p><a class="reference internal" href="contributing.html"><span class="doc">Contributing</span></a></p></li>
+</ul>
+</div>
+</section>
+<section id="admonition-with-custom-title">
+<h3>Admonition with Custom Title<a class="headerlink" href="#admonition-with-custom-title" title="Link to this heading"></a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Custom Title Here</p>
+<p>This admonition has a custom title but uses the <code class="docutils literal notranslate"><span class="pre">tip</span></code> styling.</p>
+</div>
+</section>
+<section id="collapsed-dropdown-admonition">
+<h3>Collapsed/Dropdown Admonition<a class="headerlink" href="#collapsed-dropdown-admonition" title="Link to this heading"></a></h3>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to expand (toggle)</p>
+<p>This content is hidden by default and can be revealed by clicking the title. Useful for lengthy explanations, optional details, or spoiler content.</p>
+<ul class="simple">
+<li><p>Item one</p></li>
+<li><p>Item two</p></li>
+<li><p>Item three</p></li>
+</ul>
+</div>
+</section>
+<section id="colon-fence-admonitions">
+<h3>Colon Fence Admonitions<a class="headerlink" href="#colon-fence-admonitions" title="Link to this heading"></a></h3>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">colon_fence</span></code> extension.)</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This admonition uses colon fence syntax (<code class="docutils literal notranslate"><span class="pre">:::{note}</span></code>) instead of backtick fence syntax.
+Colon fences are useful when you need to nest directives.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Colon fence warning — especially useful when the admonition body itself contains fenced code blocks:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This code block inside a colon-fence admonition</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">danger_zone</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Proceed with caution</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="images-and-figures">
+<h2>Images and Figures<a class="headerlink" href="#images-and-figures" title="Link to this heading"></a></h2>
+<section id="markdown-image-syntax">
+<h3>Markdown Image Syntax<a class="headerlink" href="#markdown-image-syntax" title="Link to this heading"></a></h3>
+<p><img alt="Placeholder diagram" src="https://via.placeholder.com/600x200/0073e6/ffffff?text=Porytiles+Architecture+Diagram" /></p>
+</section>
+<section id="sphinx-figure-directive">
+<h3>Sphinx Figure Directive<a class="headerlink" href="#sphinx-figure-directive" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://via.placeholder.com/600x200/28a745/ffffff?text=Figure+With+Caption"><img alt="Example figure" src="https://via.placeholder.com/600x200/28a745/ffffff?text=Figure+With+Caption" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 1:</strong> This is a figure with a caption. Figures support captions and cross-referencing, unlike plain images.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="image-with-specific-width">
+<h3>Image with Specific Width<a class="headerlink" href="#image-with-specific-width" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://via.placeholder.com/400x150/6f42c1/ffffff?text=Resized+Image"><img alt="Resized image example" class="align-center" src="https://via.placeholder.com/400x150/6f42c1/ffffff?text=Resized+Image" style="width: 300px;" />
+</a>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mathematics">
+<h2>Mathematics<a class="headerlink" href="#mathematics" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">dollarmath</span></code> extension for <code class="docutils literal notranslate"><span class="pre">$</span></code> syntax.)</em></p>
+<section id="inline-math">
+<h3>Inline Math<a class="headerlink" href="#inline-math" title="Link to this heading"></a></h3>
+<p>The formula for tile index calculation is <span class="math notranslate nohighlight">\(i = y \times w + x\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is the width in tiles.</p>
+<p>Euler’s identity: <span class="math notranslate nohighlight">\(e^{i\pi} + 1 = 0\)</span></p>
+</section>
+<section id="display-math-dollar-signs">
+<h3>Display Math (Dollar Signs)<a class="headerlink" href="#display-math-dollar-signs" title="Link to this heading"></a></h3>
+<div class="math notranslate nohighlight">
+\[
+P(palette) = \frac{\text{tiles using palette}}{\text{total tiles}} \times 100\%
+\]</div>
+</section>
+<section id="display-math-directive">
+<h3>Display Math (Directive)<a class="headerlink" href="#display-math-directive" title="Link to this heading"></a></h3>
+<div class="math notranslate nohighlight" id="equation-quadratic">
+<span class="eqno">(1)<a class="headerlink" href="#equation-quadratic" title="Link to this equation"></a></span>\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+</section>
+<section id="ams-math-environment">
+<h3>AMS Math Environment<a class="headerlink" href="#ams-math-environment" title="Link to this heading"></a></h3>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> extension.)</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-f4ab05ae-ca60-4792-8a11-e842d615d3b9">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f4ab05ae-ca60-4792-8a11-e842d615d3b9" title="Permalink to this equation"></a></span>\[\begin{align}
+\text{metatile\_index} &amp;= \text{row} \times \text{cols} + \text{col} \\
+\text{tile\_offset} &amp;= \text{metatile\_index} \times 4 \\
+\text{total\_tiles} &amp;= \text{rows} \times \text{cols} \times 4
+\end{align}\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Link to this heading"></a></h2>
+<p>This algorithm was first described in the original GBA hardware documentation<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. The palette optimization uses a greedy approach<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> with some modifications for the GBA’s specific constraints<a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
+</section>
+<hr class="docutils" />
+<section id="horizontal-rules">
+<h2>Horizontal Rules<a class="headerlink" href="#horizontal-rules" title="Link to this heading"></a></h2>
+<p>Three different syntaxes produce horizontal rules:</p>
+<hr class="docutils" />
+<p>Here is a horizontal rule above (using <code class="docutils literal notranslate"><span class="pre">---</span></code>). And here is one below (using <code class="docutils literal notranslate"><span class="pre">***</span></code>):</p>
+<hr class="docutils" />
+<p>And another below (using <code class="docutils literal notranslate"><span class="pre">___</span></code>):</p>
+<hr class="docutils" />
+<p><em>(They should all look identical.)</em></p>
+</section>
+<hr class="docutils" />
+<section id="substitutions">
+<h2>Substitutions<a class="headerlink" href="#substitutions" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">substitution</span></code> extension. Values defined in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.)</em></p>
+<ul class="simple">
+<li><p>Project name: Porytiles</p></li>
+<li><p>Version: 2.0.0</p></li>
+<li><p>Author: grunt-lucas</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="smart-quotes-and-replacements">
+<h2>Smart Quotes and Replacements<a class="headerlink" href="#smart-quotes-and-replacements" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">smartquotes</span></code> and <code class="docutils literal notranslate"><span class="pre">replacements</span></code> extensions.)</em></p>
+<ul class="simple">
+<li><p>Smart quotes: “double quotes” and ‘single quotes’</p></li>
+<li><p>Em dash: —</p></li>
+<li><p>En dash: –</p></li>
+<li><p>Ellipsis: …</p></li>
+<li><p>Copyright: ©</p></li>
+<li><p>Trademark: ™</p></li>
+<li><p>Registered: ®</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="block-level-attributes">
+<h2>Block-Level Attributes<a class="headerlink" href="#block-level-attributes" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">attrs_block</span></code> extension.)</em></p>
+<p class="custom-class" id="custom-id">This paragraph has a custom class and ID applied to it.</p>
+</section>
+<hr class="docutils" />
+<section id="inline-attributes">
+<h2>Inline Attributes<a class="headerlink" href="#inline-attributes" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">attrs_inline</span></code> extension.)</em></p>
+<p>This sentence has a <span class="custom-class">highlighted word</span> with an inline attribute.</p>
+</section>
+<hr class="docutils" />
+<section id="roles-and-cross-references">
+<h2>Roles and Cross-References<a class="headerlink" href="#roles-and-cross-references" title="Link to this heading"></a></h2>
+<section id="built-in-roles">
+<h3>Built-in Roles<a class="headerlink" href="#built-in-roles" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Document reference: <a class="reference internal" href="architecture.html"><span class="doc">Architecture</span></a></p></li>
+<li><p>Reference with custom text: <a class="reference internal" href="architecture.html"><span class="doc">See the architecture page</span></a></p></li>
+<li><p>Emphasis role: <em>emphasized text</em></p></li>
+<li><p>Strong role: <strong>strong text</strong></p></li>
+<li><p>Literal role: <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code></p></li>
+<li><p>Math role: <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span></p></li>
+<li><p>Equation reference: <a class="reference internal" href="#equation-quadratic">(1)</a> (references the labeled math block above)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rubric-directive">
+<h2>Rubric Directive<a class="headerlink" href="#rubric-directive" title="Link to this heading"></a></h2>
+<p class="rubric">This is a Rubric</p>
+<p>A rubric is an informal heading that does not appear in the table of contents. Useful for visual separation without affecting document structure.</p>
+</section>
+<hr class="docutils" />
+<section id="topic-directive">
+<h2>Topic Directive<a class="headerlink" href="#topic-directive" title="Link to this heading"></a></h2>
+<aside class="topic">
+<p class="topic-title">Topic: Palette Optimization Strategy</p>
+<p>The palette optimizer in Porytiles uses a multi-phase approach:</p>
+<ol class="arabic simple">
+<li><p><strong>Extraction</strong> — Identify unique colors from input tiles</p></li>
+<li><p><strong>Clustering</strong> — Group similar colors using a distance metric</p></li>
+<li><p><strong>Assignment</strong> — Assign tiles to palettes minimizing total palette count</p></li>
+</ol>
+</aside>
+</section>
+<hr class="docutils" />
+<section id="epigraph">
+<h2>Epigraph<a class="headerlink" href="#epigraph" title="Link to this heading"></a></h2>
+<blockquote class="epigraph">
+<div><p>In the beginner’s mind there are many possibilities, but in the expert’s mind there are few.</p>
+<p class="attribution">—Shunryu Suzuki</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="pull-quote">
+<h2>Pull Quote<a class="headerlink" href="#pull-quote" title="Link to this heading"></a></h2>
+<blockquote class="pull-quote">
+<div><p>The key insight is that GBA tiles are fundamentally palette-indexed, not true-color. Every design decision flows from this constraint.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="compound-paragraph">
+<h2>Compound Paragraph<a class="headerlink" href="#compound-paragraph" title="Link to this heading"></a></h2>
+<div class="compound">
+<p>This is a compound paragraph. It groups multiple body elements together so they appear as a single logical unit.</p>
+<ul class="simple">
+<li><p>Point one</p></li>
+<li><p>Point two</p></li>
+<li><p>Point three</p></li>
+</ul>
+<p>The items above are part of this compound unit.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="container-directive">
+<h2>Container Directive<a class="headerlink" href="#container-directive" title="Link to this heading"></a></h2>
+<div class="custom-container docutils container">
+<p>This content is wrapped in a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> with the class <code class="docutils literal notranslate"><span class="pre">custom-container</span></code>. Useful for applying custom CSS styling to a block of content.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="sidebar">
+<h2>Sidebar<a class="headerlink" href="#sidebar" title="Link to this heading"></a></h2>
+<aside class="sidebar">
+<p class="sidebar-title">Quick Reference</p>
+<p><strong>Tile dimensions:</strong> 8x8 pixels<br />
+<strong>Metatile dimensions:</strong> 16x16 pixels<br />
+<strong>Max palettes:</strong> 16<br />
+<strong>Colors per palette:</strong> 16 (including transparent)</p>
+</aside>
+<p>The sidebar appears to the right of the main content (theme permitting). It is useful for supplementary information, quick references, or asides that relate to the main text but shouldn’t interrupt the flow.</p>
+<p>This paragraph flows alongside the sidebar. In the RTD theme, sidebars typically float to the right with a distinct background color.</p>
+</section>
+<hr class="docutils" />
+<section id="parsed-literal-block">
+<h2>Parsed Literal Block<a class="headerlink" href="#parsed-literal-block" title="Link to this heading"></a></h2>
+<pre class="literal-block">$ porytiles2 compile \
+–primary-source ./tileset_primary \
+–secondary-source ./tileset_secondary \
+–output ./output \
+–verbose
+
+Compiling tileset… <strong>done</strong>
+Generated <em>16</em> palettes, <em>512</em> tiles</pre>
+</section>
+<hr class="docutils" />
+<section id="centered-text">
+<h2>Centered Text<a class="headerlink" href="#centered-text" title="Link to this heading"></a></h2>
+<p class="centered">
+<strong>This text is centered on the page.</strong></p></section>
+<hr class="docutils" />
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h2>
+<dl class="simple glossary">
+<dt id="term-GBA">GBA<a class="headerlink" href="#term-GBA" title="Link to this term"></a></dt><dd><p>Game Boy Advance — Nintendo’s 32-bit handheld console released in 2001.</p>
+</dd>
+<dt id="term-Porymap">Porymap<a class="headerlink" href="#term-Porymap" title="Link to this term"></a></dt><dd><p>A map editor for Pokémon Generation III decompilation projects.</p>
+</dd>
+<dt id="term-Metatile">Metatile<a class="headerlink" href="#term-Metatile" title="Link to this term"></a></dt><dd><p>A 2x2 grid of 8x8 pixel tiles forming a 16x16 pixel map unit.</p>
+</dd>
+<dt id="term-RGBA">RGBA<a class="headerlink" href="#term-RGBA" title="Link to this term"></a></dt><dd><p>Red, Green, Blue, Alpha — a color model with transparency support.</p>
+</dd>
+</dl>
+<p>Use glossary terms with the <a class="reference internal" href="#term-GBA"><span class="xref std std-term">GBA</span></a> role or <a class="reference internal" href="#term-Porymap"><span class="xref std std-term">Porymap</span></a> role.</p>
+</section>
+<hr class="docutils" />
+<section id="versioning-directives">
+<h2>Versioning Directives<a class="headerlink" href="#versioning-directives" title="Link to this heading"></a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.0: </span>The animation decompiler was added in this release.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0.0: </span>The palette optimizer now uses a greedy algorithm instead of brute force.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.0.0: </span>The <code class="docutils literal notranslate"><span class="pre">--old-flag</span></code> option is deprecated. Use <code class="docutils literal notranslate"><span class="pre">--new-flag</span></code> instead.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="html-in-markdown">
+<h2>HTML in Markdown<a class="headerlink" href="#html-in-markdown" title="Link to this heading"></a></h2>
+<p><em>(Requires <code class="docutils literal notranslate"><span class="pre">html_admonition</span></code> and/or <code class="docutils literal notranslate"><span class="pre">html_image</span></code> extensions for HTML passthrough.)</em></p>
+<div style="background-color: #f0f0f0; padding: 1em; border-radius: 5px; border-left: 4px solid #0073e6;">
+  <strong>HTML Block:</strong> This is raw HTML embedded in the Markdown document. It renders directly in the output.
+</div>
+<br>
+<details>
+<summary><strong>Click to expand (HTML details/summary)</strong></summary>
+<p>This content is hidden behind a native HTML <code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> element. Unlike the admonition dropdown, this uses the browser’s built-in disclosure widget.</p>
+<ul class="simple">
+<li><p>Supported in all modern browsers</p></li>
+<li><p>No JavaScript required</p></li>
+<li><p>Semantic HTML</p></li>
+</ul>
+</details>
+</section>
+<hr class="docutils" />
+<section id="escaped-characters">
+<h2>Escaped Characters<a class="headerlink" href="#escaped-characters" title="Link to this heading"></a></h2>
+<p>These characters are escaped to display literally:</p>
+<p>* Not italic *</p>
+<p>** Not bold **</p>
+<p>` Not code `</p>
+<p># Not a heading</p>
+<p>- Not a list item</p>
+<p>[Not a link](https://example.com)</p>
+</section>
+<hr class="docutils" />
+<section id="long-content-for-scroll-testing">
+<h2>Long Content for Scroll Testing<a class="headerlink" href="#long-content-for-scroll-testing" title="Link to this heading"></a></h2>
+<p>The following section tests how the theme handles longer content blocks:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// A longer code example to test scroll behavior</span>
+<span class="linenos"> 2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="linenos"> 3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<span class="linenos"> 4</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="linenos"> 5</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;porytiles2/domain/tile.hpp&quot;</span>
+<span class="linenos"> 8</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;porytiles2/domain/palette.hpp&quot;</span>
+<span class="linenos"> 9</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;porytiles2/domain/metatile.hpp&quot;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="k">namespace</span><span class="w"> </span><span class="nn">porytiles2</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">struct</span><span class="w"> </span><span class="nc">CompilationResult</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tile</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tiles</span><span class="p">;</span>
+<span class="linenos">15</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Palette</span><span class="o">&gt;</span><span class="w"> </span><span class="n">palettes</span><span class="p">;</span>
+<span class="linenos">16</span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Metatile</span><span class="o">&gt;</span><span class="w"> </span><span class="n">metatiles</span><span class="p">;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total_colors_used</span><span class="p">;</span>
+<span class="linenos">18</span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total_palettes_used</span><span class="p">;</span>
+<span class="linenos">19</span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="p">;</span>
+<span class="linenos">20</span><span class="p">};</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="n">CompilationResult</span><span class="w"> </span><span class="n">compile_tileset</span><span class="p">(</span>
+<span class="linenos">23</span><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">InputTile</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">input_tiles</span><span class="p">,</span>
+<span class="linenos">24</span><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">CompilationOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="n">options</span><span class="p">)</span>
+<span class="linenos">25</span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">    </span><span class="n">CompilationResult</span><span class="w"> </span><span class="n">result</span><span class="p">{};</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">    </span><span class="c1">// Phase 1: Extract unique colors</span>
+<span class="linenos">29</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">unique_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">extract_unique_colors</span><span class="p">(</span><span class="n">input_tiles</span><span class="p">);</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="w">    </span><span class="c1">// Phase 2: Build palette assignments</span>
+<span class="linenos">32</span><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">assignments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">optimize_palette_assignments</span><span class="p">(</span>
+<span class="linenos">33</span><span class="w">        </span><span class="n">unique_colors</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">max_palettes</span><span class="p">);</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">    </span><span class="c1">// Phase 3: Generate indexed tiles</span>
+<span class="linenos">36</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">input</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">input_tiles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">37</span><span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">indexed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index_tile</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">assignments</span><span class="p">);</span>
+<span class="linenos">38</span><span class="w">        </span><span class="n">result</span><span class="p">.</span><span class="n">tiles</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">indexed</span><span class="p">);</span>
+<span class="linenos">39</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="w">    </span><span class="c1">// Phase 4: Assemble metatiles</span>
+<span class="linenos">42</span><span class="w">    </span><span class="n">result</span><span class="p">.</span><span class="n">metatiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">assemble_metatiles</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">tiles</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">metatile_layout</span><span class="p">);</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="w">    </span><span class="c1">// Finalize</span>
+<span class="linenos">45</span><span class="w">    </span><span class="n">result</span><span class="p">.</span><span class="n">palettes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">build_final_palettes</span><span class="p">(</span><span class="n">assignments</span><span class="p">);</span>
+<span class="linenos">46</span><span class="w">    </span><span class="n">result</span><span class="p">.</span><span class="n">total_colors_used</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">unique_colors</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">47</span><span class="w">    </span><span class="n">result</span><span class="p">.</span><span class="n">total_palettes_used</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">palettes</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="linenos">48</span><span class="w">    </span><span class="n">result</span><span class="p">.</span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="linenos">51</span><span class="p">}</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="p">}</span><span class="w"> </span><span class="c1">// namespace porytiles2</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>This page demonstrates the following MyST Markdown features:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Features Shown</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Inline Formatting</strong></p></td>
+<td><p>Bold, italic, code, strikethrough, subscript, superscript</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Structure</strong></p></td>
+<td><p>Headings (h1–h6), paragraphs, line breaks, horizontal rules</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Links</strong></p></td>
+<td><p>External, internal, reference-style, cross-references</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Lists</strong></p></td>
+<td><p>Ordered, unordered, nested, task lists, definition lists</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Blockquotes</strong></p></td>
+<td><p>Simple, nested, with attribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>Inline, fenced, line numbers, emphasis, captions</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tables</strong></p></td>
+<td><p>Pipe tables, wide tables, list tables</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Admonitions</strong></p></td>
+<td><p>All 10+ types, custom titles, dropdowns, colon fence</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Images</strong></p></td>
+<td><p>Markdown syntax, figure directive, resized</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Math</strong></p></td>
+<td><p>Inline, display, directive, AMS environments</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Footnotes</strong></p></td>
+<td><p>Numbered footnotes with references</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Substitutions</strong></p></td>
+<td><p>Variable replacement from conf.py</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Smart Typography</strong></p></td>
+<td><p>Quotes, dashes, ellipsis, symbols</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Directives</strong></p></td>
+<td><p>Topic, rubric, sidebar, epigraph, parsed-literal, glossary</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Versioning</strong></p></td>
+<td><p>versionadded, versionchanged, deprecated</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>HTML</strong></p></td>
+<td><p>Raw HTML blocks, details/summary</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Attributes</strong></p></td>
+<td><p>Block-level and inline attributes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Game Boy Advance Technical Reference Manual, Chapter 12: Video.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Cormen, T.H. et al., <em>Introduction to Algorithms</em>, Chapter 16.</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>The GBA supports a maximum of 16 palettes with 16 colors each, where color index 0 is always transparent.</p>
+</aside>
+</aside>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, grunt-lucas.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

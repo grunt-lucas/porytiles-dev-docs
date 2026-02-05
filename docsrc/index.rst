@@ -3,6 +3,12 @@ Porytiles Developer Documentation
 
 Welcome to the Porytiles developer documentation! This documentation covers the architecture, contributing guidelines, and API reference for Porytiles development.
 
+.. note::
+
+   This documentation is for Porytiles **v2.0.0**. For documentation matching an older release,
+   checkout the corresponding `git tag <https://github.com/grunt-lucas/porytiles-dev-docs/tags>`_
+   and build locally with ``cd docsrc && uv run make html``.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Porytiles Developer Documentation &mdash; Porytiles Developer Documentation  documentation</title>
+  <title>Porytiles Developer Documentation &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/documentation_options.js?v=51b770b3"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testbed.html">Markdown Formatting Testbed</a></li>
 </ul>
 
         </div>
@@ -77,6 +78,12 @@
   <section id="porytiles-developer-documentation">
 <h1>Porytiles Developer Documentation<a class="headerlink" href="#porytiles-developer-documentation" title="Link to this heading"></a></h1>
 <p>Welcome to the Porytiles developer documentation! This documentation covers the architecture, contributing guidelines, and API reference for Porytiles development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This documentation is for Porytiles <strong>v2.0.0</strong>. For documentation matching an older release,
+checkout the corresponding <a class="reference external" href="https://github.com/grunt-lucas/porytiles-dev-docs/tags">git tag</a>
+and build locally with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">docsrc</span> <span class="pre">&amp;&amp;</span> <span class="pre">uv</span> <span class="pre">run</span> <span class="pre">make</span> <span class="pre">html</span></code>.</p>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -99,6 +106,44 @@
 <li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#core-components">Core Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference.html#domain-types">Domain Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testbed.html">Markdown Formatting Testbed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#inline-formatting">Inline Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#headings">Headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#paragraphs-and-line-breaks">Paragraphs and Line Breaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#links">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#blockquotes">Blockquotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#code-blocks">Code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#tables">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#definition-lists">Definition Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#field-lists">Field Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#admonitions">Admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#images-and-figures">Images and Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#mathematics">Mathematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#footnotes">Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#horizontal-rules">Horizontal Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#substitutions">Substitutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#smart-quotes-and-replacements">Smart Quotes and Replacements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#block-level-attributes">Block-Level Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#inline-attributes">Inline Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#roles-and-cross-references">Roles and Cross-References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#rubric-directive">Rubric Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#topic-directive">Topic Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#epigraph">Epigraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#pull-quote">Pull Quote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#compound-paragraph">Compound Paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#container-directive">Container Directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#sidebar">Sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#parsed-literal-block">Parsed Literal Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#centered-text">Centered Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#glossary">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#versioning-directives">Versioning Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#html-in-markdown">HTML in Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#escaped-characters">Escaped Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#long-content-for-scroll-testing">Long Content for Scroll Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testbed.html#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -126,7 +171,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, grunt-lucas.</p>
+    <p>&#169; Copyright 2026, grunt-lucas.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
