@@ -20,9 +20,27 @@ extensions = [
 
 # MyST parser configuration
 myst_enable_extensions = [
+    'amsmath',
+    'attrs_block',
+    'attrs_inline',
     'colon_fence',
     'deflist',
+    'dollarmath',
+    'fieldlist',
+    'html_admonition',
+    'html_image',
+    'replacements',
+    'smartquotes',
+    'strikethrough',
+    'substitution',
+    'tasklist',
 ]
+
+myst_substitutions = {
+    'project_name': 'Porytiles',
+    'version': '2.0.0',
+    'author': 'grunt-lucas',
+}
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

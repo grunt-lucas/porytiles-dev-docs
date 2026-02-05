@@ -11,6 +11,7 @@ Welcome to the Porytiles developer documentation! This documentation covers the 
    architecture
    contributing
    reference
+   testbed
 
 Getting Started
 ---------------
