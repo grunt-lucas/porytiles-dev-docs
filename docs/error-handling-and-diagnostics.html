@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>Error Handling and User Diagnostics &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -17,8 +18,10 @@
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The C Parser System" href="c-parser.html" />
+    <link rel="prev" title="The Configuration Code Generation System" href="config-generation-system.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,9 +56,9 @@
 <li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Error Handling and User Diagnostics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
@@ -92,9 +95,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Error Handling and User Diagnostics</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/genindex" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/error-handling-and-diagnostics.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -102,53 +105,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- <a href="#G"><strong>G</strong></a>
- | <a href="#M"><strong>M</strong></a>
- | <a href="#P"><strong>P</strong></a>
- | <a href="#R"><strong>R</strong></a>
- 
+  <section class="tex2jax_ignore mathjax_ignore" id="error-handling-and-user-diagnostics">
+<h1>Error Handling and User Diagnostics<a class="headerlink" href="#error-handling-and-user-diagnostics" title="Link to this heading"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Page Status</p>
+<p>This page is a placeholder. Content coming soon.</p>
 </div>
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="testbed.html#term-GBA"><strong>GBA</strong></a>
+<p>Covers two tightly related systems: the error propagation model and the diagnostic output system.</p>
+<ul class="simple">
+<li><p><strong>Error handling philosophy</strong>: no C++ exceptions; two mechanisms for two purposes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ChainableResult&lt;T,</span> <span class="pre">E&gt;</span></code> for recoverable errors (most of the codebase)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">panic()</span></code> / <code class="docutils literal notranslate"><span class="pre">assert_or_panic()</span></code> for programmer errors / invariant violations (immediate abort with source location)</p></li>
+</ul>
 </li>
-  </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="testbed.html#term-Metatile"><strong>Metatile</strong></a>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ChainableResult&lt;T,</span> <span class="pre">E&gt;</span></code></strong>: monadic result type, move-only, error chain accumulation</p>
+<ul>
+<li><p>How chaining works: preserves the full path from root cause to proximate error</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">PT_TRY_ASSIGN_CHAIN_ERR</span></code> macro for ergonomic propagation (similar to Rust’s <code class="docutils literal notranslate"><span class="pre">?</span></code> operator)</p></li>
+</ul>
 </li>
-  </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="testbed.html#term-Porymap"><strong>Porymap</strong></a>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Error</span></code> interface and <code class="docutils literal notranslate"><span class="pre">FormattableError</span></code></strong>:</p>
+<ul>
+<li><p>Format strings with styled <code class="docutils literal notranslate"><span class="pre">FormatParam</span></code> parameters</p></li>
+<li><p>The message style rules (capital first letter, ends with period, single quotes around highlighted items)</p></li>
+</ul>
 </li>
-  </ul></td>
-</tr></table>
-
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="testbed.html#term-RGBA"><strong>RGBA</strong></a>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">UserDiagnostics</span></code> system</strong>:</p>
+<ul>
+<li><p>Abstract interface: <code class="docutils literal notranslate"><span class="pre">remark()</span></code>, <code class="docutils literal notranslate"><span class="pre">warning()</span></code>, <code class="docutils literal notranslate"><span class="pre">error()</span></code>, <code class="docutils literal notranslate"><span class="pre">fatal()</span></code> at four severity levels</p></li>
+<li><p>Tag-based filtering: regex include/exclude patterns</p></li>
+<li><p>Concrete implementations: <code class="docutils literal notranslate"><span class="pre">StderrStyledUserDiagnostics</span></code>, <code class="docutils literal notranslate"><span class="pre">BufferedUserDiagnostics</span></code>, <code class="docutils literal notranslate"><span class="pre">NullUserDiagnostics</span></code>, <code class="docutils literal notranslate"><span class="pre">FilteredUserDiagnostics</span></code></p></li>
+</ul>
 </li>
-  </ul></td>
-</tr></table>
-
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TextFormatter</span></code> integration</strong>: <code class="docutils literal notranslate"><span class="pre">AnsiStyledTextFormatter</span></code> vs <code class="docutils literal notranslate"><span class="pre">PlainTextFormatter</span></code>, selected via DI</p></li>
+<li><p><strong>When to use which</strong>: Result for domain/app errors, panic for precondition violations, diagnostics for user-facing messages</p></li>
+</ul>
+<p><strong>Cross-references:</strong> <a class="reference internal" href="dependency-injection.html"><span class="doc">Dependency Injection with Google Fruit</span></a> for how formatter/diagnostics are injected, <a class="reference internal" href="writing-tests.html"><span class="doc">Writing Tests</span></a> for testing with <code class="docutils literal notranslate"><span class="pre">BufferedUserDiagnostics</span></code>, <a class="reference internal" href="cpp-features-and-patterns.html"><span class="doc">C++ Features and Patterns Used</span></a> for the macro details</p>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="config-generation-system.html" class="btn btn-neutral float-left" title="The Configuration Code Generation System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="c-parser.html" class="btn btn-neutral float-right" title="The C Parser System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

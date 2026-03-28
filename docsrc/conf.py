@@ -38,6 +38,8 @@ myst_enable_extensions = [
     'tasklist',
 ]
 
+suppress_warnings = ['myst.strikethrough']
+
 myst_substitutions = {
     'project_name': 'Porytiles',
     'version': '2.0.0',

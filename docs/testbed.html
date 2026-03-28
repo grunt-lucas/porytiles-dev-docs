@@ -22,7 +22,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="API Reference" href="reference.html" /> 
+    <link rel="prev" title="Glossary" href="glossary.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,12 +44,41 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev-environment-setup.html">Setting Up Your Development Environment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="project-layout.html">Project Layout and Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layered-architecture.html">Layered Architecture and DDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-flow-and-pipelines.html">Data Flow and Compilation Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependency-injection.html">Dependency Injection with Google Fruit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-config-value.html">How to Add a New Configuration Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-command.html">How to Add a New CLI Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-packing-strategy.html">How to Add a New Packing Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-di-managed-service.html">How to Add a DI-Managed Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests.html">Writing Tests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build-and-test.html">Building, Testing, and Development Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external-dependencies.html">External Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts-and-tooling.html">Scripts and Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-cd.html">CI/CD and Release Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Markdown Formatting Testbed</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#inline-formatting">Inline Formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#headings">Headings</a><ul>
@@ -226,8 +255,8 @@ This is the next line, forced onto a new line within the same paragraph using a 
 <section id="internal-cross-references">
 <h3>Internal Cross-References<a class="headerlink" href="#internal-cross-references" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Link to another page: <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started</span></a></p></li>
-<li><p>Link to another page with custom text: <a class="reference internal" href="architecture.html"><span class="doc">Go to Architecture</span></a></p></li>
+<li><p>Link to another page: <a class="reference internal" href="dev-environment-setup.html"><span class="doc">Setting Up Your Development Environment</span></a></p></li>
+<li><p>Link to another page with custom text: <a class="reference internal" href="layered-architecture.html"><span class="doc">Go to Architecture</span></a></p></li>
 <li><p>Reference-style link to a section on this page: <a class="reference internal" href="#admonitions-section"><span class="std std-ref">Admonitions</span></a></p></li>
 </ul>
 </section>
@@ -692,8 +721,8 @@ cmake<span class="w"> </span>--install<span class="w"> </span>clion-build-debug<
 <p class="admonition-title">See also</p>
 <p>This is a <strong>see also</strong> admonition. Use it to point readers to related topics.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="architecture.html"><span class="doc">Architecture</span></a></p></li>
-<li><p><a class="reference internal" href="contributing.html"><span class="doc">Contributing</span></a></p></li>
+<li><p><a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a></p></li>
+<li><p><a class="reference internal" href="writing-tests.html"><span class="doc">Writing Tests</span></a></p></li>
 </ul>
 </div>
 </section>
@@ -783,8 +812,8 @@ P(palette) = \frac{\text{tiles using palette}}{\text{total tiles}} \times 100\%
 <section id="ams-math-environment">
 <h3>AMS Math Environment<a class="headerlink" href="#ams-math-environment" title="Link to this heading"></a></h3>
 <p><em>(Requires <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> extension.)</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4ab05ae-ca60-4792-8a11-e842d615d3b9">
-<span class="eqno">(2)<a class="headerlink" href="#equation-f4ab05ae-ca60-4792-8a11-e842d615d3b9" title="Permalink to this equation"></a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cb13230d-991f-4ada-baff-9bce031836c8">
+<span class="eqno">(2)<a class="headerlink" href="#equation-cb13230d-991f-4ada-baff-9bce031836c8" title="Permalink to this equation"></a></span>\[\begin{align}
 \text{metatile\_index} &amp;= \text{row} \times \text{cols} + \text{col} \\
 \text{tile\_offset} &amp;= \text{metatile\_index} \times 4 \\
 \text{total\_tiles} &amp;= \text{rows} \times \text{cols} \times 4
@@ -849,8 +878,8 @@ P(palette) = \frac{\text{tiles using palette}}{\text{total tiles}} \times 100\%
 <section id="built-in-roles">
 <h3>Built-in Roles<a class="headerlink" href="#built-in-roles" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Document reference: <a class="reference internal" href="architecture.html"><span class="doc">Architecture</span></a></p></li>
-<li><p>Reference with custom text: <a class="reference internal" href="architecture.html"><span class="doc">See the architecture page</span></a></p></li>
+<li><p>Document reference: <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a></p></li>
+<li><p>Reference with custom text: <a class="reference internal" href="layered-architecture.html"><span class="doc">See the architecture page</span></a></p></li>
 <li><p>Emphasis role: <em>emphasized text</em></p></li>
 <li><p>Strong role: <strong>strong text</strong></p></li>
 <li><p>Literal role: <code class="docutils literal notranslate"><span class="pre">literal</span> <span class="pre">text</span></code></p></li>
@@ -1146,7 +1175,7 @@ Generated <em>16</em> palettes, <em>512</em> tiles</pre>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="reference.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

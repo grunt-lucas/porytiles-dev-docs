@@ -3,25 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>Data Flow and Compilation Pipelines &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
 
   
-    
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=51b770b3"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dependency Injection with Google Fruit" href="dependency-injection.html" />
+    <link rel="prev" title="Layered Architecture and DDD" href="layered-architecture.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +36,7 @@
             Porytiles Developer Documentation
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -48,10 +48,10 @@
 <li class="toctree-l1"><a class="reference internal" href="dev-environment-setup.html">Setting Up Your Development Environment</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="project-layout.html">Project Layout and Directory Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="layered-architecture.html">Layered Architecture and DDD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data-flow-and-pipelines.html">Data Flow and Compilation Pipelines</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Flow and Compilation Pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dependency-injection.html">Dependency Injection with Google Fruit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
 </ul>
@@ -95,8 +95,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Data Flow and Compilation Pipelines</li>
       <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/data-flow-and-pipelines.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -104,22 +105,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-flow-and-compilation-pipelines">
+<h1>Data Flow and Compilation Pipelines<a class="headerlink" href="#data-flow-and-compilation-pipelines" title="Link to this heading"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Page Status</p>
+<p>This page is a placeholder. Content coming soon.</p>
+</div>
+<p>Concrete walkthrough of how data moves through the system during the major operations. This page makes the architecture <em>real</em> – showing the actual classes and methods involved at each step.</p>
+<ul class="simple">
+<li><p><strong>The compile pipeline</strong> (detailed):</p>
+<ul>
+<li><p>Input: RGBA layer PNGs (bottom, middle, top) + <code class="docutils literal notranslate"><span class="pre">attributes.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LayerImageMetatileizer</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">ImageTileizer</span></code> -&gt; tile canonicalization -&gt; <code class="docutils literal notranslate"><span class="pre">PalettePacker</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">PrimaryTilesetCompiler</span></code> -&gt; output artifacts</p></li>
+</ul>
+</li>
+<li><p><strong>Edit mode branching</strong>: how optimize/patch/locked modes affect the pipeline</p></li>
+<li><p><strong>The decompile pipeline</strong> (reverse direction):</p>
+<ul>
+<li><p>Input: Porymap binary artifacts -&gt; <code class="docutils literal notranslate"><span class="pre">MetatileDecompiler</span></code> -&gt; RGBA layers + <code class="docutils literal notranslate"><span class="pre">attributes.csv</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>The import pipeline</strong>:</p>
+<ul>
+<li><p>C parser reads header files, discovers INCBIN paths, reads binary artifacts</p></li>
+<li><p>Constructs both <code class="docutils literal notranslate"><span class="pre">PorytilesTilesetComponent</span></code> and <code class="docutils literal notranslate"><span class="pre">PorymapTilesetComponent</span></code></p></li>
+</ul>
+</li>
+<li><p>Key domain models that flow through: <code class="docutils literal notranslate"><span class="pre">Tileset</span></code>, <code class="docutils literal notranslate"><span class="pre">PorytilesTilesetComponent</span></code>, <code class="docutils literal notranslate"><span class="pre">PorymapTilesetComponent</span></code>, <code class="docutils literal notranslate"><span class="pre">PixelTile&lt;T&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">Metatile</span></code>, <code class="docutils literal notranslate"><span class="pre">PackedPalette</span></code></p></li>
+<li><p>The use case layer as orchestrator</p></li>
+<li><p>Animation data flow (brief overview)</p></li>
+</ul>
+<p><strong>Cross-references:</strong> <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a> for layer context, <a class="reference internal" href="adding-a-packing-strategy.html"><span class="doc">How to Add a New Packing Strategy</span></a> for extending the packing step, <a class="reference internal" href="c-parser.html"><span class="doc">The C Parser System</span></a> for the import parser</p>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="layered-architecture.html" class="btn btn-neutral float-left" title="Layered Architecture and DDD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dependency-injection.html" class="btn btn-neutral float-right" title="Dependency Injection with Google Fruit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -141,14 +166,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

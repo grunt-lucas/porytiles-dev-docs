@@ -57,8 +57,8 @@ This is the next line, forced onto a new line within the same paragraph using a 
 
 ### Internal Cross-References
 
-- Link to another page: {doc}`getting-started`
-- Link to another page with custom text: {doc}`Go to Architecture <architecture>`
+- Link to another page: {doc}`dev-environment-setup`
+- Link to another page with custom text: {doc}`Go to Architecture <layered-architecture>`
 - Reference-style link to a section on this page: [Admonitions](admonitions-section)
 
 ### Reference-Style Links
@@ -421,8 +421,8 @@ This is an **error** admonition. Use it to describe error conditions or failure 
 
 ```{seealso}
 This is a **see also** admonition. Use it to point readers to related topics.
-- {doc}`architecture`
-- {doc}`contributing`
+- {doc}`layered-architecture`
+- {doc}`writing-tests`
 ```
 
 ### Admonition with Custom Title
@@ -602,8 +602,8 @@ This sentence has a [highlighted word]{.custom-class} with an inline attribute.
 
 ### Built-in Roles
 
-- Document reference: {doc}`architecture`
-- Reference with custom text: {doc}`See the architecture page <architecture>`
+- Document reference: {doc}`layered-architecture`
+- Reference with custom text: {doc}`See the architecture page <layered-architecture>`
 - Emphasis role: {emphasis}`emphasized text`
 - Strong role: {strong}`strong text`
 - Literal role: {literal}`literal text`

@@ -3,25 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>The C Parser System &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
 
   
-    
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=51b770b3"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to Add a New Configuration Value" href="adding-a-config-value.html" />
+    <link rel="prev" title="Error Handling and User Diagnostics" href="error-handling-and-diagnostics.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +36,7 @@
             Porytiles Developer Documentation
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -56,10 +56,10 @@
 <li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The C Parser System</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
 <ul>
@@ -95,8 +95,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">The C Parser System</li>
       <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/c-parser.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -104,22 +105,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-c-parser-system">
+<h1>The C Parser System<a class="headerlink" href="#the-c-parser-system" title="Link to this heading"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Page Status</p>
+<p>This page is a placeholder. Content coming soon.</p>
+</div>
+<p>A standalone subsystem that deserves dedicated documentation since it is non-trivial and critical for the import pipeline.</p>
+<ul class="simple">
+<li><p><strong>Purpose</strong>: parse pokeemerald C/C++ header files to discover enum declarations, <code class="docutils literal notranslate"><span class="pre">#define</span></code> constants, <code class="docutils literal notranslate"><span class="pre">INCBIN</span></code> paths, function definitions, struct declarations, designated initializer lists</p></li>
+<li><p><strong>Location</strong>: <code class="docutils literal notranslate"><span class="pre">utilities/c_parser/</span></code> – lives in utilities because it has zero project-specific dependencies</p></li>
+<li><p><strong>Architecture</strong>: lexer (<code class="docutils literal notranslate"><span class="pre">lexer.hpp</span></code>) -&gt; token stream (<code class="docutils literal notranslate"><span class="pre">token.hpp</span></code>) -&gt; parser (<code class="docutils literal notranslate"><span class="pre">parser.hpp</span></code>) -&gt; AST node types</p></li>
+<li><p><strong>AST node types</strong> and what each represents:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EnumDeclaration</span></code> / <code class="docutils literal notranslate"><span class="pre">EnumMember</span></code>, <code class="docutils literal notranslate"><span class="pre">DefineStatement</span></code>, <code class="docutils literal notranslate"><span class="pre">IncbinDeclaration</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FunctionDefinition</span></code> / <code class="docutils literal notranslate"><span class="pre">FunctionCallInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">StructVariableDeclaration</span></code> / <code class="docutils literal notranslate"><span class="pre">DesignatedInitializerField</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ArrayDeclaration</span></code></p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CParserFacade</span></code></strong>: high-level entry point that wraps the lexer+parser</p></li>
+<li><p><strong>How the import pipeline uses it</strong>: <code class="docutils literal notranslate"><span class="pre">HeaderBehaviorMapProvider</span></code> reads <code class="docutils literal notranslate"><span class="pre">metatile_behaviors.h</span></code>, <code class="docutils literal notranslate"><span class="pre">HeaderDefineProvider</span></code> reads <code class="docutils literal notranslate"><span class="pre">fieldmap.h</span></code>, import use case reads <code class="docutils literal notranslate"><span class="pre">graphics.h</span></code> and <code class="docutils literal notranslate"><span class="pre">tileset_anims.c</span></code></p></li>
+<li><p><strong>Testing the parser</strong>: unit tests with string inputs, no file I/O needed</p></li>
+</ul>
+<p><strong>Cross-references:</strong> <a class="reference internal" href="data-flow-and-pipelines.html"><span class="doc">Data Flow and Compilation Pipelines</span></a> for how import uses the parser, <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a> for why it lives in utilities</p>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="error-handling-and-diagnostics.html" class="btn btn-neutral float-left" title="Error Handling and User Diagnostics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding-a-config-value.html" class="btn btn-neutral float-right" title="How to Add a New Configuration Value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -141,14 +158,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

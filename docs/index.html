@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="getting-started.html" /> 
+    <link rel="next" title="Setting Up Your Development Environment" href="dev-environment-setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,12 +42,41 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-environment-setup.html">Setting Up Your Development Environment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="project-layout.html">Project Layout and Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layered-architecture.html">Layered Architecture and DDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-flow-and-pipelines.html">Data Flow and Compilation Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependency-injection.html">Dependency Injection with Google Fruit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-config-value.html">How to Add a New Configuration Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-command.html">How to Add a New CLI Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-packing-strategy.html">How to Add a New Packing Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-di-managed-service.html">How to Add a DI-Managed Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests.html">Writing Tests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build-and-test.html">Building, Testing, and Development Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external-dependencies.html">External Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts-and-tooling.html">Scripts and Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-cd.html">CI/CD and Release Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="testbed.html">Markdown Formatting Testbed</a></li>
 </ul>
 
@@ -77,80 +106,71 @@
              
   <section id="porytiles-developer-documentation">
 <h1>Porytiles Developer Documentation<a class="headerlink" href="#porytiles-developer-documentation" title="Link to this heading"></a></h1>
-<p>Welcome to the Porytiles developer documentation! This documentation covers the architecture, contributing guidelines, and API reference for Porytiles development.</p>
+<p>Welcome to the Porytiles developer documentation! This documentation covers the architecture, core systems, contributing recipes, and reference material for Porytiles development.</p>
+<p>The target audience is a <strong>C++ developer who may be new to the Porytiles codebase</strong> but is not new to programming. The goal is “what you need to know to contribute effectively” – not an exhaustive API reference for every class.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This documentation is for Porytiles <strong>v2.0.0</strong>. For documentation matching an older release,
 checkout the corresponding <a class="reference external" href="https://github.com/grunt-lucas/porytiles-dev-docs/tags">git tag</a>
 and build locally with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">docsrc</span> <span class="pre">&amp;&amp;</span> <span class="pre">uv</span> <span class="pre">run</span> <span class="pre">make</span> <span class="pre">html</span></code>.</p>
 </div>
+<section id="about-this-documentation">
+<h2>About This Documentation<a class="headerlink" href="#about-this-documentation" title="Link to this heading"></a></h2>
+<p>This documentation is organized according to the <a class="reference external" href="https://diataxis.fr/">Diataxis framework</a>, a systematic approach to technical documentation that distinguishes four types of content based on the reader’s needs:</p>
+<ul class="simple">
+<li><p><strong>Tutorials</strong> (Getting Started) — learning-oriented, step-by-step walkthroughs that take you from zero to a working build. Follow these when you are new to the project.</p></li>
+<li><p><strong>Explanation</strong> (Architecture, Core Systems) — understanding-oriented content that clarifies the codebase structure, design decisions, patterns, and the “why” behind the system. Read these to build a mental model before contributing.</p></li>
+<li><p><strong>How-to Guides</strong> — task-oriented, step-by-step recipes for common contributor tasks. Consult these when you need to add a config value, implement a new command, extend the packing system, or write tests.</p></li>
+<li><p><strong>Reference</strong> — information-oriented, precise descriptions of build commands, dependencies, scripts, and CI/CD. Look things up here when you need exact details.</p></li>
+</ul>
+<p>The in-repo <code class="docutils literal notranslate"><span class="pre">Porytiles2/ARCHITECTURE.md</span></code> provides a detailed codemap optimized for quick reference. This documentation site <strong>complements</strong> that document with deeper dives, worked examples, data flow walkthroughs, and contributor recipes.</p>
+<p>For class-level and function-level API details, consult the <a class="reference external" href="https://grunt-lucas.github.io/porytiles/">Doxygen API reference</a>. That site is auto-generated from source comments and covers every public interface. Use it alongside this documentation: start here for architecture and concepts, then drill into Doxygen when you need the exact signature, parameters, or preconditions for a specific class or function.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#building-from-source">Building from Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#running-tests">Running Tests</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#domain-driven-design">Domain-Driven Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="architecture.html#layer-structure">Layer Structure</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-style">Code Style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#pull-requests">Pull Requests</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#core-components">Core Components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference.html#domain-types">Domain Types</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="testbed.html">Markdown Formatting Testbed</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#inline-formatting">Inline Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#headings">Headings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#paragraphs-and-line-breaks">Paragraphs and Line Breaks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#links">Links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#lists">Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#blockquotes">Blockquotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#code-blocks">Code Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#tables">Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#definition-lists">Definition Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#field-lists">Field Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#admonitions">Admonitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#images-and-figures">Images and Figures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#mathematics">Mathematics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#footnotes">Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#horizontal-rules">Horizontal Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#substitutions">Substitutions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#smart-quotes-and-replacements">Smart Quotes and Replacements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#block-level-attributes">Block-Level Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#inline-attributes">Inline Attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#roles-and-cross-references">Roles and Cross-References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#rubric-directive">Rubric Directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#topic-directive">Topic Directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#epigraph">Epigraph</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#pull-quote">Pull Quote</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#compound-paragraph">Compound Paragraph</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#container-directive">Container Directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#sidebar">Sidebar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#parsed-literal-block">Parsed Literal Block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#centered-text">Centered Text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#glossary">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#versioning-directives">Versioning Directives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#html-in-markdown">HTML in Markdown</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#escaped-characters">Escaped Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#long-content-for-scroll-testing">Long Content for Scroll Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testbed.html#summary">Summary</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-environment-setup.html">Setting Up Your Development Environment</a></li>
 </ul>
 </div>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
-<p>Check out the <a class="reference internal" href="getting-started.html"><span class="doc">Getting Started</span></a> guide to set up your development environment and build Porytiles from source.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="project-layout.html">Project Layout and Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layered-architecture.html">Layered Architecture and DDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-flow-and-pipelines.html">Data Flow and Compilation Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependency-injection.html">Dependency Injection with Google Fruit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp-features-and-patterns.html">C++ Features and Patterns Used</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-config-value.html">How to Add a New Configuration Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-command.html">How to Add a New CLI Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-packing-strategy.html">How to Add a New Packing Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-di-managed-service.html">How to Add a DI-Managed Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests.html">Writing Tests</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build-and-test.html">Building, Testing, and Development Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external-dependencies.html">External Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts-and-tooling.html">Scripts and Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-cd.html">CI/CD and Release Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 <section id="indices-and-tables">
@@ -165,7 +185,7 @@ and build locally with <code class="docutils literal notranslate"><span class="p
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dev-environment-setup.html" class="btn btn-neutral float-right" title="Setting Up Your Development Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
