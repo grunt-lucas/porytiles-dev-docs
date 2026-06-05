@@ -5,7 +5,7 @@
 This page is a placeholder. Content coming soon.
 ```
 
-The core architectural reference. Complements `Porytiles2/ARCHITECTURE.md` with richer diagrams, decision frameworks, and worked examples of "where does this code go?"
+The core architectural reference. Complements `porytiles/ARCHITECTURE.md` with richer diagrams, decision frameworks, and worked examples of "where does this code go?"
 
 - The five layers and their responsibilities:
   - **utilities**: zero-dependency helpers (result types, text formatting, C parser, string utils)
@@ -24,4 +24,4 @@ The core architectural reference. Complements `Porytiles2/ARCHITECTURE.md` with 
 - The repository pattern: abstract interfaces in `domain/repos/`, concrete implementations in `infra/repos/`
 - Design principles summary (reference `ARCHITECTURE.md` for full details)
 
-**Cross-references:** {doc}`data-flow-and-pipelines` for concrete data flow, {doc}`dependency-injection` for DI, `Porytiles2/ARCHITECTURE.md` in-repo for the detailed codemap
+**Cross-references:** {doc}`data-flow-and-pipelines` for concrete data flow, {doc}`dependency-injection` for DI, `porytiles/ARCHITECTURE.md` in-repo for the detailed codemap

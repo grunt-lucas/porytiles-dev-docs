@@ -5,7 +5,7 @@
 This page is a placeholder. Content coming soon.
 ```
 
-Step-by-step recipe for adding a new subcommand to the `porytiles2` CLI.
+Step-by-step recipe for adding a new subcommand to the `porytiles` CLI.
 
 - The Command pattern in `tools/driver/`: `command.hpp` base class, one `command_*.hpp/.cpp` per subcommand
 - Step 1: Create a new `command_<name>.hpp` and `command_<name>.cpp` in `tools/driver/`

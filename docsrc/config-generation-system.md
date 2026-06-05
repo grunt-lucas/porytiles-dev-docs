@@ -7,7 +7,7 @@ This page is a placeholder. Content coming soon.
 
 The most complex and unique system in the project. A single YAML file drives the generation of ~38 C++ files across three architectural layers.
 
-- Overview: `config_schema.yaml` (780+ lines) -> `Scripts/generate_config.py` -> 24 Jinja2 templates -> ~38 generated C++ files
+- Overview: `config_schema.yaml` (780+ lines) -> `scripts/generate_config.py` -> 24 Jinja2 templates -> ~38 generated C++ files
 - **The schema format** -- fields per config value:
   - `canonical_name`, `symbol`, `yaml_path`, `cli_option`, `cli_desc`
   - `layer`, `type`, `parser`, `default_value`
