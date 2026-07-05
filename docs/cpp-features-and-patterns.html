@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Features and Patterns Used &mdash; Porytiles Developer Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Configuration Code Generation System" href="config-generation-system.html" />
+    <link rel="prev" title="Dependency Injection with Google Fruit" href="dependency-injection.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Porytiles Developer Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev-environment-setup.html">Setting Up Your Development Environment</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project-layout.html">Project Layout and Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layered-architecture.html">Layered Architecture and DDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-flow-and-pipelines.html">Data Flow and Compilation Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependency-injection.html">Dependency Injection with Google Fruit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ Features and Patterns Used</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config-generation-system.html">The Configuration Code Generation System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling-and-diagnostics.html">Error Handling and User Diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-parser.html">The C Parser System</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-config-value.html">How to Add a New Configuration Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-command.html">How to Add a New CLI Command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-packing-strategy.html">How to Add a New Packing Strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adding-a-di-managed-service.html">How to Add a DI-Managed Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests.html">Writing Tests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build-and-test.html">Building, Testing, and Development Workflows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external-dependencies.html">External Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts-and-tooling.html">Scripts and Tooling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ci-cd.html">CI/CD and Release Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="testbed.html">Markdown Formatting Testbed</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Porytiles Developer Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">C++ Features and Patterns Used</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/develop/docsrc/cpp-features-and-patterns.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="c-features-and-patterns-used">
+<h1>C++ Features and Patterns Used<a class="headerlink" href="#c-features-and-patterns-used" title="Link to this heading"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Page Status</p>
+<p>This page is a placeholder. Content coming soon.</p>
+</div>
+<p>Background for contributors who may not be familiar with specific C++20/23 features and patterns used in the codebase.</p>
+<ul class="simple">
+<li><p><strong>C++20 features in use</strong>:</p>
+<ul>
+<li><p>Concepts: <code class="docutils literal notranslate"><span class="pre">SupportsTransparency</span></code> and others for compile-time constraints</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::source_location</span></code>: used in panic diagnostics for automatic file/line capture</p></li>
+<li><p>Ranges and views: used throughout for container transformations</p></li>
+</ul>
+</li>
+<li><p><strong>C++23 features in use</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::format</span></code> and <code class="docutils literal notranslate"><span class="pre">std::formatter</span></code> specializations (with the critical <code class="docutils literal notranslate"><span class="pre">auto</span> <span class="pre">&amp;ctx</span></code> note from <code class="docutils literal notranslate"><span class="pre">STYLE.md</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::expected</span></code>: used in newer code for simple error returns</p></li>
+<li><p>Deducing <code class="docutils literal notranslate"><span class="pre">this</span></code>: where and why it is used</p></li>
+</ul>
+</li>
+<li><p><strong>Key patterns</strong>:</p>
+<ul>
+<li><p>Move-only types: <code class="docutils literal notranslate"><span class="pre">ChainableResult</span></code> is move-only, use case return values use <code class="docutils literal notranslate"><span class="pre">std::move</span></code></p></li>
+<li><p>Template aggregates: <code class="docutils literal notranslate"><span class="pre">PixelTile&lt;T&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">Image&lt;T&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">Metatile&lt;T&gt;</span></code> – parameterized on pixel type</p></li>
+<li><p>Strong types: <code class="docutils literal notranslate"><span class="pre">ArtifactKey</span></code>, <code class="docutils literal notranslate"><span class="pre">ConfigValue&lt;T&gt;</span></code> – wrapping primitives for type safety</p></li>
+<li><p>Bitmask enums: <code class="docutils literal notranslate"><span class="pre">Style</span></code> flags for text formatting</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">PT_TRY_ASSIGN_CHAIN_ERR</span></code> macro: what it expands to</p></li>
+</ul>
+</li>
+<li><p><strong>fmtlib notes</strong>: mostly migrated to <code class="docutils literal notranslate"><span class="pre">std::format</span></code>, but <code class="docutils literal notranslate"><span class="pre">fmt::dynamic_format_arg_store</span></code> still needed for runtime variable argument counts</p></li>
+<li><p>Reference to <code class="docutils literal notranslate"><span class="pre">STYLE.md</span></code> for naming conventions, include ordering, and idioms (do not duplicate)</p></li>
+</ul>
+<p><strong>Cross-references:</strong> <a class="reference internal" href="error-handling-and-diagnostics.html"><span class="doc">Error Handling and User Diagnostics</span></a> for the Result/Error types in detail, <code class="docutils literal notranslate"><span class="pre">STYLE.md</span></code> (external reference)</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dependency-injection.html" class="btn btn-neutral float-left" title="Dependency Injection with Google Fruit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config-generation-system.html" class="btn btn-neutral float-right" title="The Configuration Code Generation System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, grunt-lucas.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
