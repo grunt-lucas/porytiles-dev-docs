@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Layout and Directory Structure &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>Project Layout and Directory Structure &mdash; Porytiles Developer Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=51b770b3"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -97,7 +97,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Project Layout and Directory Structure</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/project-layout.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/develop/docsrc/project-layout.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -113,19 +113,19 @@
 </div>
 <p>Orientation page. After building, the contributor needs a mental map of what lives where.</p>
 <ul class="simple">
-<li><p>Top-level directory layout: <code class="docutils literal notranslate"><span class="pre">Porytiles2/</span></code> (main source), <code class="docutils literal notranslate"><span class="pre">Scripts/</span></code>, <code class="docutils literal notranslate"><span class="pre">Resources/</span></code>, <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code>, <code class="docutils literal notranslate"><span class="pre">porytiles-dev-docs/</span></code>, <code class="docutils literal notranslate"><span class="pre">porytiles-user-docs/</span></code></p></li>
-<li><p>Inside <code class="docutils literal notranslate"><span class="pre">Porytiles2/</span></code>: <code class="docutils literal notranslate"><span class="pre">include/porytiles2/</span></code>, <code class="docutils literal notranslate"><span class="pre">lib/</span></code>, <code class="docutils literal notranslate"><span class="pre">tools/driver/</span></code>, <code class="docutils literal notranslate"><span class="pre">tests/</span></code>, <code class="docutils literal notranslate"><span class="pre">config_templates/</span></code>, <code class="docutils literal notranslate"><span class="pre">Notes/</span></code></p></li>
-<li><p>The include/lib split: headers in <code class="docutils literal notranslate"><span class="pre">include/porytiles2/&lt;layer&gt;/</span></code>, implementations in <code class="docutils literal notranslate"><span class="pre">lib/&lt;layer&gt;/</span></code></p></li>
+<li><p>Top-level directory layout: <code class="docutils literal notranslate"><span class="pre">porytiles/</span></code> (main source), <code class="docutils literal notranslate"><span class="pre">scripts/</span></code>, <code class="docutils literal notranslate"><span class="pre">resources/</span></code>, <code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code>, <code class="docutils literal notranslate"><span class="pre">porytiles-dev-docs/</span></code>, <code class="docutils literal notranslate"><span class="pre">porytiles-user-docs/</span></code></p></li>
+<li><p>Inside <code class="docutils literal notranslate"><span class="pre">porytiles/</span></code>: <code class="docutils literal notranslate"><span class="pre">include/porytiles/</span></code>, <code class="docutils literal notranslate"><span class="pre">lib/</span></code>, <code class="docutils literal notranslate"><span class="pre">tools/driver/</span></code>, <code class="docutils literal notranslate"><span class="pre">tests/</span></code>, <code class="docutils literal notranslate"><span class="pre">config_templates/</span></code>, <code class="docutils literal notranslate"><span class="pre">notes/</span></code></p></li>
+<li><p>The include/lib split: headers in <code class="docutils literal notranslate"><span class="pre">include/porytiles/&lt;layer&gt;/</span></code>, implementations in <code class="docutils literal notranslate"><span class="pre">lib/&lt;layer&gt;/</span></code></p></li>
 <li><p>Layer directories at a glance: <code class="docutils literal notranslate"><span class="pre">domain/</span></code>, <code class="docutils literal notranslate"><span class="pre">app/</span></code>, <code class="docutils literal notranslate"><span class="pre">infra/</span></code>, <code class="docutils literal notranslate"><span class="pre">xcut/</span></code>, <code class="docutils literal notranslate"><span class="pre">utilities/</span></code> – one-sentence description each (full details on the architecture page)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tools/driver/</span></code>: the CLI executable entry point</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">config_templates/</span></code>: Jinja2 templates and <code class="docutils literal notranslate"><span class="pre">config_schema.yaml</span></code> for code generation</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tests/unit/</span></code> vs <code class="docutils literal notranslate"><span class="pre">tests/integration/</span></code> vs <code class="docutils literal notranslate"><span class="pre">tests/support/</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Notes/</span></code>: internal design decision documents (not user-facing, but valuable for understanding rationale)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Porytiles2/ARCHITECTURE.md</span></code>: the in-repo architecture overview (the dev docs site expands on it)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notes/</span></code>: internal design decision documents (not user-facing, but valuable for understanding rationale)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">porytiles/ARCHITECTURE.md</span></code>: the in-repo architecture overview (the dev docs site expands on it)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">STYLE.md</span></code>: code style guide (the authoritative reference – dev docs reference it, not duplicate it)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Resources/</span></code>: test assets and example files used by integration tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">resources/</span></code>: test assets and example files used by integration tests</p></li>
 </ul>
-<p><strong>Cross-references:</strong> <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a> for DDD layer details, <a class="reference internal" href="config-generation-system.html"><span class="doc">The Configuration Code Generation System</span></a> for config_templates, <a class="reference internal" href="scripts-and-tooling.html"><span class="doc">Scripts and Tooling</span></a> for Scripts/</p>
+<p><strong>Cross-references:</strong> <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a> for DDD layer details, <a class="reference internal" href="config-generation-system.html"><span class="doc">The Configuration Code Generation System</span></a> for config_templates, <a class="reference internal" href="scripts-and-tooling.html"><span class="doc">Scripts and Tooling</span></a> for scripts/</p>
 </section>
 
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writing Tests &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>Writing Tests &mdash; Porytiles Developer Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=51b770b3"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -97,7 +97,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Writing Tests</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/writing-tests.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/develop/docsrc/writing-tests.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -116,7 +116,7 @@
 <li><p><strong>Unit tests vs integration tests</strong>: when to use each</p>
 <ul>
 <li><p>Unit: no I/O, no filesystem, all dependencies mocked, tests a single component in isolation</p></li>
-<li><p>Integration: real file I/O, real assets from <code class="docutils literal notranslate"><span class="pre">Resources/</span></code>, tests multiple components together</p></li>
+<li><p>Integration: real file I/O, real assets from <code class="docutils literal notranslate"><span class="pre">resources/</span></code>, tests multiple components together</p></li>
 </ul>
 </li>
 <li><p>Test directory structure: <code class="docutils literal notranslate"><span class="pre">tests/unit/</span></code> mirrors the source layout, <code class="docutils literal notranslate"><span class="pre">tests/integration/</span></code> organized by feature</p></li>
@@ -126,9 +126,9 @@
 <li><p>Testing with generated mock configs: <code class="docutils literal notranslate"><span class="pre">MockDomainConfig</span></code>, <code class="docutils literal notranslate"><span class="pre">MockAppConfig</span></code>, <code class="docutils literal notranslate"><span class="pre">MockInfraConfig</span></code></p></li>
 <li><p>Testing <code class="docutils literal notranslate"><span class="pre">ChainableResult</span></code> error paths: checking error chains, verifying error messages</p></li>
 <li><p>Testing domain algorithms: pure functions are trivial to test</p></li>
-<li><p>Integration test resources: where they live (<code class="docutils literal notranslate"><span class="pre">Resources/</span></code>), how to add new test fixtures</p></li>
+<li><p>Integration test resources: where they live (<code class="docutils literal notranslate"><span class="pre">resources/</span></code>), how to add new test fixtures</p></li>
 <li><p>Running specific tests: GoogleTest filter flags (<code class="docutils literal notranslate"><span class="pre">--gtest_filter</span></code>)</p></li>
-<li><p>Code coverage: using <code class="docutils literal notranslate"><span class="pre">Scripts/coverage.py</span></code> to verify new code paths are exercised</p></li>
+<li><p>Code coverage: using <code class="docutils literal notranslate"><span class="pre">scripts/coverage.py</span></code> to verify new code paths are exercised</p></li>
 </ul>
 <p><strong>Cross-references:</strong> <a class="reference internal" href="error-handling-and-diagnostics.html"><span class="doc">Error Handling and User Diagnostics</span></a> for testing error paths, <a class="reference internal" href="build-and-test.html"><span class="doc">Building, Testing, and Development Workflows</span></a> for running the suite and coverage</p>
 </section>

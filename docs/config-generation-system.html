@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Configuration Code Generation System &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
+  <title>The Configuration Code Generation System &mdash; Porytiles Developer Documentation 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=51b770b3"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -97,7 +97,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">The Configuration Code Generation System</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/main/docsrc/config-generation-system.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/develop/docsrc/config-generation-system.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -113,7 +113,7 @@
 </div>
 <p>The most complex and unique system in the project. A single YAML file drives the generation of ~38 C++ files across three architectural layers.</p>
 <ul class="simple">
-<li><p>Overview: <code class="docutils literal notranslate"><span class="pre">config_schema.yaml</span></code> (780+ lines) -&gt; <code class="docutils literal notranslate"><span class="pre">Scripts/generate_config.py</span></code> -&gt; 24 Jinja2 templates -&gt; ~38 generated C++ files</p></li>
+<li><p>Overview: <code class="docutils literal notranslate"><span class="pre">config_schema.yaml</span></code> (780+ lines) -&gt; <code class="docutils literal notranslate"><span class="pre">scripts/generate_config.py</span></code> -&gt; 24 Jinja2 templates -&gt; ~38 generated C++ files</p></li>
 <li><p><strong>The schema format</strong> – fields per config value:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">canonical_name</span></code>, <code class="docutils literal notranslate"><span class="pre">symbol</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml_path</span></code>, <code class="docutils literal notranslate"><span class="pre">cli_option</span></code>, <code class="docutils literal notranslate"><span class="pre">cli_desc</span></code></p></li>

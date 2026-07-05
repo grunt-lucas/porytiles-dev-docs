@@ -155,7 +155,7 @@ Use `std::vector<int>` for dynamic arrays. The function `compute_something()` re
 #include <iostream>
 #include <vector>
 
-namespace porytiles2 {
+namespace porytiles {
 
 class TileCompiler {
   public:
@@ -173,7 +173,7 @@ class TileCompiler {
     std::string name_;
 };
 
-} // namespace porytiles2
+} // namespace porytiles
 ```
 
 ```python
@@ -189,7 +189,7 @@ def generate_config(schema_path: str) -> dict:
 # Shell commands
 cmake --build clion-build-debug -j7
 cmake --install clion-build-debug --prefix ~/.local
-./clion-build-debug/Porytiles2/tests/Porytiles2AllTests
+./clion-build-debug/porytiles/tests/PorytilesAllTests
 ```
 
 ```json
@@ -229,14 +229,14 @@ It preserves    whitespace    and
 
 #include <string>
 
-namespace porytiles2 {
+namespace porytiles {
 
 int main() {
     std::string message = "Hello, Porytiles!";
     return 0;
 }
 
-} // namespace porytiles2
+} // namespace porytiles
 ```
 
 ### Code Block with Line Emphasis
@@ -691,7 +691,7 @@ This paragraph flows alongside the sidebar. In the RTD theme, sidebars typically
 ## Parsed Literal Block
 
 ```{parsed-literal}
-$ porytiles2 compile \\
+$ porytiles compile \\
     --primary-source ./tileset_primary \\
     --secondary-source ./tileset_secondary \\
     --output ./output \\
@@ -800,11 +800,11 @@ The following section tests how the theme handles longer content blocks:
 #include <string>
 #include <vector>
 
-#include "porytiles2/domain/tile.hpp"
-#include "porytiles2/domain/palette.hpp"
-#include "porytiles2/domain/metatile.hpp"
+#include "porytiles/domain/tile.hpp"
+#include "porytiles/domain/palette.hpp"
+#include "porytiles/domain/metatile.hpp"
 
-namespace porytiles2 {
+namespace porytiles {
 
 struct CompilationResult {
     std::vector<Tile> tiles;
@@ -846,7 +846,7 @@ struct CompilationResult {
     return result;
 }
 
-} // namespace porytiles2
+} // namespace porytiles
 ```
 
 ---

@@ -7,7 +7,7 @@ The target audience is a **C++ developer who may be new to the Porytiles codebas
 
 .. note::
 
-   This documentation is for Porytiles **v2.0.0**. For documentation matching an older release,
+   This documentation is for Porytiles |release|. For documentation matching an older release,
    checkout the corresponding `git tag <https://github.com/grunt-lucas/porytiles-dev-docs/tags>`_
    and build locally with ``cd docsrc && uv run make html``.
 
@@ -21,7 +21,7 @@ This documentation is organized according to the `Diataxis framework <https://di
 - **How-to Guides** --- task-oriented, step-by-step recipes for common contributor tasks. Consult these when you need to add a config value, implement a new command, extend the packing system, or write tests.
 - **Reference** --- information-oriented, precise descriptions of build commands, dependencies, scripts, and CI/CD. Look things up here when you need exact details.
 
-The in-repo ``Porytiles2/ARCHITECTURE.md`` provides a detailed codemap optimized for quick reference. This documentation site **complements** that document with deeper dives, worked examples, data flow walkthroughs, and contributor recipes.
+The in-repo ``porytiles/ARCHITECTURE.md`` provides a detailed codemap optimized for quick reference. This documentation site **complements** that document with deeper dives, worked examples, data flow walkthroughs, and contributor recipes.
 
 For class-level and function-level API details, consult the `Doxygen API reference <https://grunt-lucas.github.io/porytiles/>`_. That site is auto-generated from source comments and covers every public interface. Use it alongside this documentation: start here for architecture and concepts, then drill into Doxygen when you need the exact signature, parameters, or preconditions for a specific class or function.
 
