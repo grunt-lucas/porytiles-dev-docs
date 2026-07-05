@@ -65,7 +65,7 @@ html_context = {
     'display_github': True,
     'github_user': 'grunt-lucas',
     'github_repo': 'porytiles-dev-docs',
-    'github_version': 'develop',
+    'github_version': 'master',
     'conf_py_path': '/docsrc/',
 }
 
