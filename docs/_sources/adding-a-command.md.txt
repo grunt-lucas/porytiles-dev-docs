@@ -11,10 +11,10 @@ Step-by-step recipe for adding a new subcommand to the `porytiles` CLI.
 - Step 1: Create a new `command_<name>.hpp` and `command_<name>.cpp` in `tools/driver/`
 - Step 2: Implement the `Command` subclass: register CLI11 options, implement `Run()`
 - Step 3: If needed, create a use case in `app/use_cases/` to hold the orchestration logic
-- Step 4: Wire domain services in the command handler (or via DI when available)
+- Step 4: Wire services via the shared setup classes in `tools/driver/tileset_command_setup.hpp`: `TilesetCommandEnv` (config, validation, diagnostics) and `TilesetCommandServices` (schema, providers, repo, compiler); only construct command-specific services inline
 - Step 5: Register the command in the driver's main setup
 - Step 6: Add option groups if the command shares options with other commands
 - Step 7: Add integration tests for the new command
-- Reference: existing commands as templates (`command_compile_tileset` is the most complete example)
+- Reference: existing commands as templates (`command_compile_tileset` is the most complete example of the env + services pattern)
 
 **Cross-references:** {doc}`layered-architecture` for where use cases vs commands live, {doc}`dependency-injection` for wiring services
