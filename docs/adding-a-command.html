@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Add a New CLI Command &mdash; Porytiles Developer Documentation 1.0.0 documentation</title>
+  <title>How to Add a New CLI Command &mdash; Porytiles Developer Documentation 2.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e6b1eb62" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/documentation_options.js?v=51b770b3"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/js/theme.js"></script>
@@ -97,7 +97,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">How to Add a New CLI Command</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/develop/docsrc/adding-a-command.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/grunt-lucas/porytiles-dev-docs/blob/master/docsrc/adding-a-command.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -117,11 +117,11 @@
 <li><p>Step 1: Create a new <code class="docutils literal notranslate"><span class="pre">command_&lt;name&gt;.hpp</span></code> and <code class="docutils literal notranslate"><span class="pre">command_&lt;name&gt;.cpp</span></code> in <code class="docutils literal notranslate"><span class="pre">tools/driver/</span></code></p></li>
 <li><p>Step 2: Implement the <code class="docutils literal notranslate"><span class="pre">Command</span></code> subclass: register CLI11 options, implement <code class="docutils literal notranslate"><span class="pre">Run()</span></code></p></li>
 <li><p>Step 3: If needed, create a use case in <code class="docutils literal notranslate"><span class="pre">app/use_cases/</span></code> to hold the orchestration logic</p></li>
-<li><p>Step 4: Wire domain services in the command handler (or via DI when available)</p></li>
+<li><p>Step 4: Wire services via the shared setup classes in <code class="docutils literal notranslate"><span class="pre">tools/driver/tileset_command_setup.hpp</span></code>: <code class="docutils literal notranslate"><span class="pre">TilesetCommandEnv</span></code> (config, validation, diagnostics) and <code class="docutils literal notranslate"><span class="pre">TilesetCommandServices</span></code> (schema, providers, repo, compiler); only construct command-specific services inline</p></li>
 <li><p>Step 5: Register the command in the driver’s main setup</p></li>
 <li><p>Step 6: Add option groups if the command shares options with other commands</p></li>
 <li><p>Step 7: Add integration tests for the new command</p></li>
-<li><p>Reference: existing commands as templates (<code class="docutils literal notranslate"><span class="pre">command_compile_tileset</span></code> is the most complete example)</p></li>
+<li><p>Reference: existing commands as templates (<code class="docutils literal notranslate"><span class="pre">command_compile_tileset</span></code> is the most complete example of the env + services pattern)</p></li>
 </ul>
 <p><strong>Cross-references:</strong> <a class="reference internal" href="layered-architecture.html"><span class="doc">Layered Architecture and DDD</span></a> for where use cases vs commands live, <a class="reference internal" href="dependency-injection.html"><span class="doc">Dependency Injection with Google Fruit</span></a> for wiring services</p>
 </section>

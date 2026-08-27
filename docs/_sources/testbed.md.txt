@@ -287,32 +287,32 @@ void example() {
 
 ### Simple Pipe Table
 
-| Feature       | Status      | Notes                  |
-|:--------------|:-----------:|------------------------:|
-| Compilation   | Complete    | All targets supported  |
+| Feature       |   Status    |                  Notes |
+|:--------------|:-----------:|-----------------------:|
+| Compilation   |  Complete   |  All targets supported |
 | Decompilation | In Progress | Partial implementation |
-| Animation     | Complete    | Full keyframe support  |
-| Dual Layer    | Planned     | Not yet started        |
+| Animation     |  Complete   |  Full keyframe support |
+| Dual Layer    |   Planned   |        Not yet started |
 
 *Note: Column alignment is demonstrated above --- left, center, and right.*
 
 ### Wide Table
 
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 |
-|-----------|----------|----------|----------|----------|----------|
-| Data A1   | Data A2  | Data A3  | Data A4  | Data A5  | Data A6  |
-| Data B1   | Data B2  | Data B3  | Data B4  | Data B5  | Data B6  |
-| Data C1   | Data C2  | Data C3  | Data C4  | Data C5  | Data C6  |
+|----------|----------|----------|----------|----------|----------|
+| Data A1  | Data A2  | Data A3  | Data A4  | Data A5  | Data A6  |
+| Data B1  | Data B2  | Data B3  | Data B4  | Data B5  | Data B6  |
+| Data C1  | Data C2  | Data C3  | Data C4  | Data C5  | Data C6  |
 
 ### Table with Inline Formatting
 
-| Element       | Syntax              | Rendered               |
-|---------------|---------------------|------------------------|
-| Bold          | `**bold**`          | **bold**               |
-| Italic        | `*italic*`          | *italic*               |
-| Code          | `` `code` ``        | `code`                 |
-| Link          | `[text](url)`       | [text](https://example.com) |
-| Strikethrough | `~~strike~~`        | ~~strike~~             |
+| Element       | Syntax        | Rendered                    |
+|---------------|---------------|-----------------------------|
+| Bold          | `**bold**`    | **bold**                    |
+| Italic        | `*italic*`    | *italic*                    |
+| Code          | `` `code` ``  | `code`                      |
+| Link          | `[text](url)` | [text](https://example.com) |
+| Strikethrough | `~~strike~~`  | ~~strike~~                  |
 
 ### List Table Directive
 
@@ -855,22 +855,22 @@ struct CompilationResult {
 
 This page demonstrates the following MyST Markdown features:
 
-| Category                | Features Shown                                              |
-|-------------------------|-------------------------------------------------------------|
-| **Inline Formatting**   | Bold, italic, code, strikethrough, subscript, superscript   |
-| **Structure**           | Headings (h1--h6), paragraphs, line breaks, horizontal rules|
-| **Links**               | External, internal, reference-style, cross-references       |
-| **Lists**               | Ordered, unordered, nested, task lists, definition lists    |
-| **Blockquotes**         | Simple, nested, with attribution                            |
-| **Code**                | Inline, fenced, line numbers, emphasis, captions            |
-| **Tables**              | Pipe tables, wide tables, list tables                       |
-| **Admonitions**         | All 10+ types, custom titles, dropdowns, colon fence        |
-| **Images**              | Markdown syntax, figure directive, resized                  |
-| **Math**                | Inline, display, directive, AMS environments                |
-| **Footnotes**           | Numbered footnotes with references                          |
-| **Substitutions**       | Variable replacement from conf.py                           |
-| **Smart Typography**    | Quotes, dashes, ellipsis, symbols                           |
-| **Directives**          | Topic, rubric, sidebar, epigraph, parsed-literal, glossary  |
-| **Versioning**          | versionadded, versionchanged, deprecated                    |
-| **HTML**                | Raw HTML blocks, details/summary                            |
-| **Attributes**          | Block-level and inline attributes                           |
+| Category              | Features Shown                                               |
+|-----------------------|--------------------------------------------------------------|
+| **Inline Formatting** | Bold, italic, code, strikethrough, subscript, superscript    |
+| **Structure**         | Headings (h1--h6), paragraphs, line breaks, horizontal rules |
+| **Links**             | External, internal, reference-style, cross-references        |
+| **Lists**             | Ordered, unordered, nested, task lists, definition lists     |
+| **Blockquotes**       | Simple, nested, with attribution                             |
+| **Code**              | Inline, fenced, line numbers, emphasis, captions             |
+| **Tables**            | Pipe tables, wide tables, list tables                        |
+| **Admonitions**       | All 10+ types, custom titles, dropdowns, colon fence         |
+| **Images**            | Markdown syntax, figure directive, resized                   |
+| **Math**              | Inline, display, directive, AMS environments                 |
+| **Footnotes**         | Numbered footnotes with references                           |
+| **Substitutions**     | Variable replacement from conf.py                            |
+| **Smart Typography**  | Quotes, dashes, ellipsis, symbols                            |
+| **Directives**        | Topic, rubric, sidebar, epigraph, parsed-literal, glossary   |
+| **Versioning**        | versionadded, versionchanged, deprecated                     |
+| **HTML**              | Raw HTML blocks, details/summary                             |
+| **Attributes**        | Block-level and inline attributes                            |
